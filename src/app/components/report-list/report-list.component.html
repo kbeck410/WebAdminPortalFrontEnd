@@ -1,0 +1,121 @@
+<form name="adminReportSearchForm" method="post" action="/webrptportal/adminRepSearchLoad.rtf">
+    <table cellspacing="0" cellpadding="0" border="0"> 
+    <tbody><tr>
+        <td>
+            <table class="tablewidth_850" cellspacing="0" cellpadding="0">
+                <tbody><tr>
+                    <h1>
+                        Report Search
+                    </h1>
+                   
+                </tr>
+            </tbody></table> 
+                    
+            <table  cellspacing="0" cellpadding="0" class="tablewidth_850" align="right">	
+                <tbody><tr>
+                    <td class="tablecaption">
+                        
+                    </td>
+                    <td class="tablecaption"></td>
+                    <td class="tablecaption" > 
+                      
+                        <button class="btn btn-success" routerLink="/addReport" routerLinkActive="active">
+                            Add Report
+                        </button>
+                        </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table class="tablewidth_850">
+                <tbody><tr>
+                    <td width="85">
+                        <span class="label">Report Name:</span>
+                    </td>
+                    <td>
+                        <input type="text" name="reportName" maxlength="9" value="" onkeypress="pressEnterKey(document.adminReportSearchForm,'reportSearch');" onblur="colorreset(this);" onfocus="changecolour(this);" class="field"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td width="85">
+                        <span class="label">Title Name:</span>
+                    </td>
+                    <td>
+                        <input type="text" name="title" value="" onkeypress="pressEnterKey(document.adminReportSearchForm,'reportSearch');" onblur="colorreset(this);" onfocus="changecolour(this);" class="field">
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <td> <button class="btn btn-success"onclick="fnValidateSearch(document.adminReportSearchForm,'reportSearch');"  accesskey="S">
+                        Search
+                    </button></td>
+                    <td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </td>
+    </tr>
+    <br><br>
+    <tr>
+        <td>
+            <table class="tablewidth_850">
+            <tbody><tr>
+                <td class="tablecaption">
+                    Results:
+                </td>
+            </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table class="tablewidth_850" height="23px" cellspacing="0" border="0"> 
+                <tbody><tr class="listtitlewidth_400">
+                    <td>
+                        <img src="/webrptportal/images/checkmark.gif">
+                    </td> 
+                    
+                        <td class="tablewidth_200">
+                            Report Name
+                        </td>	
+                        
+                        
+                    <td class="tablewidth_75">
+                        AS400
+                    </td>
+                    <td class="tablewidth_50">
+                        Status
+                    </td>
+                    <td class="tablewidth_120">
+                        Spool Report?
+                    </td>
+                    <td class="tablewidth_100">
+                        Skip Pages
+                    </td>
+                    <td class="tablewidth_165">
+                        Creation Date
+                    </td>
+                    <td class="tablewidth_140">
+                        Report Definition
+                    </td>
+                </tr>
+            
+            </tbody></table>
+            
+                <table class="tablewidth_850" cellspacing="0">
+                    <tbody><tr>
+                    <td>
+                        
+                    </td>
+                    </tr>
+                </tbody></table>
+            
+        </td>	
+    </tr>
+    </tbody></table>
+    <input type="hidden" name="Option">
+    
+    </form>
