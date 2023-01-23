@@ -1,0 +1,268 @@
+<form name="AddReport" method="post" action="">
+
+  <table cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td>
+          <table cellspacing="0" cellpadding="0" class="tablewidth_850" align="right">
+            <tbody>
+              <tr>
+                <td>
+                  <button routerLink="/report-list" routerLinkActive="active">
+                    X
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="tablewidth_850" cellspacing="0" cellpadding="0">
+            <tbody>
+              <tr>
+                <td class="screenhead" width="94%">
+                  Add Report
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table cellspacing="0" cellpadding="0" class="tablewidth_850">
+            <tbody>
+              <tr>
+                <td class="tablecaption">
+                  Report Details
+                </td>
+                <td class="tablecaption"></td>
+                <td class="tablecaption" align="right">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="tablewidth_850" border="0">
+            <tbody>
+              <tr>
+                <td>
+                  <table border="0" width="100%">
+                    <tbody>
+                      <tr>
+                        <td width="100">
+                          <span class="labelright">Report Name</span>
+                        </td>
+                        <td>
+                          <input type="text" name="reportName" maxlength="50" size="25" value=""
+                            onblur="colorreset(this);" onfocus="changecolour(this);" class="field">
+                        </td>
+                        <td width="100">
+                          <span class="labelright">History (Days)</span>
+                        </td>
+                        <td>
+                          <input type="text" name="historyMaxdays" maxlength="4" size="4" value="45"
+                            onblur="colorreset(this);" onfocus="changecolour(this);" class="field">
+                        </td>
+                        <td width="100">
+                          <span class="labelright">Pages to Skip</span>
+                        </td>
+                        <td>
+                          <input type="text" name="skipPages" maxlength="4" size="4" value="0"
+                            onblur="colorreset(this);" onfocus="changecolour(this);" class="field">
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td width="100">
+                          <span class="labelright">Description</span>
+                        </td>
+                        <td colspan="5">
+                          <textarea name="reportDesc" cols="73" rows="2" onkeydown="testCounter(75,this);"
+                            onkeyup="testCounter(75,this);" onblur="colorreset(this);" onfocus="changecolour(this);"
+                            class="field"></textarea>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td width="100">
+                          <span class="labelright">Detail Description</span>
+                        </td>
+                        <td colspan="5">
+                          <textarea name="reportDetailDesc" cols="73" rows="2" onkeydown="testCounter(2000,this);"
+                            onkeyup="testCounter(2000,this);" onblur="colorreset(this);" onfocus="changecolour(this);"
+                            class="field"></textarea>
+                        </td>
+                      </tr>
+
+                      <!-- Opions Start Here -->
+                      <tr>
+                        <td width="100">
+                          <span class="labelright">AS400</span>
+                        </td>
+                        <td>
+                          <select name="as400ID" style="width:120" class="field">
+                            <option value="1" selected="selected">ANY</option>
+                            <option value="4">CLEVELAND</option>
+                            <option value="2">GREENHILLS</option>
+                            <option value="3">READING</option>
+                          </select>
+                        </td>
+
+                        <td width="100">
+                          <span class="labelright"># of Columns</span>
+                        </td>
+                        <td>
+                          <select name="numColumns" style="width:50" class="field">
+                            <option value="132" selected="selected">132</option>
+                            <option value="175">175</option>
+                            <option value="198">198</option>
+                          </select>
+                        </td>
+
+                        <td width="100">
+                          <span class="labelright">Confidential</span>
+                        </td>
+                        <td>
+                          <input type="radio" name="Confidential" value="1" onblur="colorreset(this);"
+                            onfocus="changecolour(this);" class="field"><span class="label">Yes</span>
+                          <input type="radio" name="Confidential" value="0" checked="checked" onblur="colorreset(this);"
+                            onfocus="changecolour(this);" class="field"><span class="label">No</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <table width="100%" border="0">
+                    <tbody>
+                      <tr>
+                        <td width="125">
+                          <span class="labelright">Spoolfile Report</span>
+                        </td>
+                        <td>
+                          <input type="radio" name="nonspoolFile" value="0" checked="checked" onblur="colorreset(this);"
+                            onfocus="changecolour(this);" class="field"><span class="label">Yes</span>
+                          <input type="radio" name="nonspoolFile" value="1" onblur="colorreset(this);"
+                            onfocus="changecolour(this);" class="field"><span class="label">No</span>
+                        </td>
+
+                        <td width="150">
+                          <span class="labelright">Overrides Allowed</span>
+                        </td>
+                        <td>
+                          <input type="radio" name="allowOverrides" value="1" checked="checked"
+                            onblur="colorreset(this);" onfocus="changecolour(this);" class="field"><span
+                            class="label">Yes</span>
+                          <input type="radio" name="allowOverrides" value="0" onblur="colorreset(this);"
+                            onfocus="changecolour(this);" class="field"><span class="label">No</span>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td width="125">
+                          <span class="labelright">Printable Report</span>
+                        </td>
+                        <td>
+                          <input type="radio" name="printRep" value="1" checked="checked" onblur="colorreset(this);"
+                            onfocus="changecolour(this);" class="field"><span class="label">Yes</span>
+                          <input type="radio" name="printRep" value="0" onblur="colorreset(this);"
+                            onfocus="changecolour(this);" class="field"><span class="label">No</span>
+                        </td>
+
+                        <td width="150">
+                          <span class="labelright">Contains Multiple Reports</span>
+                        </td>
+                        <td>
+                          <input type="radio" name="multiReports" value="1" onblur="colorreset(this);"
+                            onfocus="changecolour(this);" class="field"><span class="label">Yes</span>
+                          <input type="radio" name="multiReports" value="0" checked="checked" onblur="colorreset(this);"
+                            onfocus="changecolour(this);" class="field"><span class="label">No</span>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td width="125">
+                          <span class="labelright">Status</span>
+                        </td>
+                        <td>
+                          <input type="radio" name="status" value="I" checked="checked" onblur="colorreset(this);"
+                            onfocus="changecolour(this);" class="field"><span class="label">Active</span>
+                          <input type="radio" name="status" value="A" onblur="colorreset(this);"
+                            onfocus="changecolour(this);" class="field"><span class="label">Inactive</span>
+                        </td>
+
+                        <td width="150">
+                          <span class="labelright">BI Report</span>
+                        </td>
+                        <td>
+                          <input type="radio" name="biReport" value="1" onblur="colorreset(this);"
+                            onfocus="changecolour(this);" class="field"><span class="label">Yes</span>
+                          <input type="radio" name="biReport" value="0" checked="checked" onblur="colorreset(this);"
+                            onfocus="changecolour(this);" class="field"><span class="label">No</span>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td width="125">
+                          <span class="labelright">Help Enabled</span>
+                        </td>
+                        <td>
+                          <input type="radio" name="helpReport" value="Y" onclick="doit(this)"
+                            onblur="colorreset(this);" onfocus="changecolour(this);" class="field"><span
+                            class="label">Yes</span>
+                          <input type="radio" name="helpReport" value="N" checked="checked" onclick="doit(this)"
+                            onblur="colorreset(this);" onfocus="changecolour(this);" class="field"><span
+                            class="label">No</span>
+                        </td>
+
+                        <td width="150">
+                          <span class="labelright">Combined PDF Report</span>
+                        </td>
+                        <td>
+                          <input type="radio" name="combinePDFReport" value="1" onblur="colorreset(this);"
+                            onfocus="changecolour(this);" class="field"><span class="label">Yes</span>
+                          <input type="radio" name="combinePDFReport" value="0" checked="checked"
+                            onblur="colorreset(this);" onfocus="changecolour(this);" class="field"><span
+                            class="label">No</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table border="0" width="100%">
+                    <tbody>
+                      <tr>
+                        <td width="14%">
+                          <span class="labelright">Help URL</span>
+                        </td>
+                        <td>
+                          <input type="text" name="helpUrl" maxlength="250" size="85" value=""
+                            onblur="colorreset(this);" onfocus="changecolour(this);" disabled="disabled" class="field"
+                            id="TxBox">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table border="0" align="right">
+                    <tr>
+                      <br>
+                    </tr>
+                    <tr>
+                      <br>
+                      <button onclick="validateReportForm(document.AddForm,'reportSave');" class="buttondesign"
+                        accesskey="S">
+                        <em class="buttoninitial">Save</em>
+                      </button>
+                    </tr>
+
+                  </table>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
